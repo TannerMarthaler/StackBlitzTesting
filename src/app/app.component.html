@@ -1,5 +1,18 @@
 <div>
-  <h1>This is a starter project in Angular</h1>
-  <h2>Bootstrap has been added</h2>
-  <h2>To create a new project, fork it.</h2>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username"
+    #uName
+    (keyup)="setUsername(uName.value)"
+  />
+  <p>The username is {{ username }}</p>
+  <button
+    class="btn btn-primary"
+    [disabled]="isEmpty()"
+    (click)="changeUsername()"
+  >
+    Click Me!
+  </button>
+  <button class="btn btn-warning" (click)="clearUsername()">Clear</button>
 </div>
